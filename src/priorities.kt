@@ -1,4 +1,11 @@
-
+/*
+Priorities
+1. ()   paranthesis
+2. ^    power
+3. *,/  Multiplication & division
+4. +,-  Add & subtract
+5. =    Assignment
+* */
 fun main(args: Array<String>){
     var num1:Int = 10
     var num2:Int = 10
