@@ -15,6 +15,10 @@ fun main(args: Array<String>){
 
     result = ++num1+num2
     println("the result of pre increement is : $result")
-    
+
+    result = num1++ + num2
+
+    println("the result of post increement is: $result")
+    println("the value of num1 is : $num1")
 
 }
