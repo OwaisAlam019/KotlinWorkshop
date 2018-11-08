@@ -6,11 +6,9 @@ fun main(args: Array<String>){
     print("enter the value of x")
     var x = readLine()!!.toInt()
     when (x) {
-        1 -> print("x == 1")
-        2 -> print("x == 2")
-        else -> { // Note the block
-            print("x is neither 1 nor 2")
-        }
+            0, 1  -> print("x == 0 or x == 1 or x == 2")
+        else ->  // Note the block
+            print("x is neither 0 nor 1")
     }
 
 }
