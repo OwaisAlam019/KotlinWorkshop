@@ -1,14 +1,15 @@
+import java.lang.Integer.parseInt
 
 /*
-when replaces the switch operator of C-like languages.
-*/
+We can use arbitrary expressions (not only constants) as branch conditions
+ */
 fun main(args: Array<String>){
     print("enter the value of x")
     var x = readLine()!!.toInt()
+    var s = "3"
     when (x) {
-            0, 1  -> print("x == 0 or x == 1 or x == 2")
-        else ->  // Note the block
-            print("x is neither 0 nor 1")
+        parseInt(s) -> print("s encodes x")
+        else -> print("s does not encode x")
     }
 
 }
