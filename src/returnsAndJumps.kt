@@ -10,12 +10,12 @@ Kotlin has three structural jump expressions:
 
 * */
 fun main(args:Array<String>){
-   // break with nested loop
+   // break with nested loop and label
 
-    for (i in 1..3){
+    loop@for (i in 1..3){
         for (ii in 1..3){
             if (ii==2)
-                break
+                break@loop
             println("inner loop")
         }
     }
