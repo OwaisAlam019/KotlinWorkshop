@@ -13,8 +13,9 @@ fun main(args:Array<String>){
    // simple break
 
     for (i in 1..3){
-        println("Iteration $i")
+
         if(i==2)
-            break
+            continue
+        println("Iteration $i")
     }
 }
