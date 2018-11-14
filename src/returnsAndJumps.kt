@@ -10,13 +10,15 @@ Kotlin has three structural jump expressions:
 
 * */
 fun main(args:Array<String>){
-   // break with nested loop and label
 
-    loop@for (i in 1..3){
-        for (ii in 1..3){
-            if (ii==2)
-                continue@loop
-            println("inner loop")
-        }
-    }
+    print("Enter your name")
+    var name: String? = readLine() // replace readline with null to see what happens
+//    val s: String?
+//    if (name!=null)
+//        s = name
+//    else
+//        throw  IllegalArgumentException("Name required")
+    val s = name ?: throw IllegalArgumentException("Name requirement")
+
+    println(s)     // 's' is known to be initialized at this point
 }
