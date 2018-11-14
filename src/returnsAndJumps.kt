@@ -10,15 +10,13 @@ Kotlin has three structural jump expressions:
 
 * */
 fun main(args:Array<String>){
+    foo()
+}
 
-    print("Enter your name")
-    var name: String? = readLine() // replace readline with null to see what happens
-//    val s: String?
-//    if (name!=null)
-//        s = name
-//    else
-//        throw  IllegalArgumentException("Name required")
-    val s = name ?: throw IllegalArgumentException("Name requirement")
-
-    println(s)     // 's' is known to be initialized at this point
+fun foo() {
+   listOf(1, 2, 3, 4, 5).forEach lit@ {
+        if (it == 3) return@lit // non-local return directly to the caller of foo()
+        print(it)
+    }
+    println("this point is Unreachable")
 }
