@@ -1,19 +1,25 @@
-fun sum(n1:Int,n2:Int): Int{
-    return n1+n2
+
+/*
+High order function (Higher level function)
+function which accepts function as a parameter or returns a function or can do both.
+Means, instead of passing Int, String, or other types as a parameter in a function
+ we can pass a function as a parameter in other function.
+* */
+
+
+fun myFun(org: String,portal: String, fn: (String,String) -> String) {
+    val result = fn(org,portal)
+    println(result)
 }
 
-fun defaultArgument(n1:Int=22,n2:Int=23,qux:()->Unit){
-    println("n1 is $n1")
-    println("n2 is $n2")
-    qux()
+fun main(args: Array<String>){
 
-}
-
-fun main(args:Array<String>){
-
-    var sum = sum(1,2)
-    println("Sum is $sum");
-
-    //calling default argument Functions
-    defaultArgument(){ print("Hello")}
+    // Lambdas are code blocks enclosed in curly braces.
+    var lambdaFunc:(String,String)->String = {org,portal->
+        if (org=="IT Retina")
+            "$org develop $portal"
+        else
+            "Nothing"
+    }
+    myFun("IT Retina","login",lambdaFunc)
 }
