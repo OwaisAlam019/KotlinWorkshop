@@ -15,7 +15,7 @@ fun main(args:Array<String>){
     loop@for (i in 1..3){
         for (ii in 1..3){
             if (ii==2)
-                break@loop
+                continue@loop
             println("inner loop")
         }
     }
