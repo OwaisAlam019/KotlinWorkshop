@@ -7,7 +7,7 @@
 
 fun main(args:Array<String>){
 
-//    Array Initialization
-    val array1 = Array(5, {0})
-    array1.forEach { println(it) }
+//    Array initialization with lambda
+    val asc = Array(5, { index -> (index +index ) })
+    asc.forEach { println(it) }
 }
