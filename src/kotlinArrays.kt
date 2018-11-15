@@ -1,26 +1,36 @@
+
 /*
-* Array constructor is declared with specified size and init function.
-* The init function is used to returns the elements of array with their index.
-* Array(size: Int, init: (Int) -> T)
-* */
+* Kotlin ArrayList class is used to create a dynamic array.
+ * Which means the size of ArrayList class can be increased
+ * or decreased according to requirement.
+ * ArrayList class provides both read and write functionalities.*/
+
 
 
 fun main(args:Array<String>){
 
-    var arrayString = Array<String>(4){""}
+    val arrayList1 = ArrayList<String>()//Creating an empty arraylist
 
-    arrayString.forEachIndexed { index, s ->
-        println("Enter a string")
-        arrayString[index] = readLine()!!
+    arrayList1.add("Ali")//Adding object in arraylist
+    arrayList1.add("Raheel")
+    arrayList1.add("Anas")
+
+    println(".......print ArrayList.......")
+
+    for (i in arrayList1) {
+        println(i)
     }
-    println("String elements")
-    for (item in arrayString){
-        println(item)
+
+//    with iitial capacity
+    println("size of arrayList1 = "+arrayList1.size)
+    val arrayList2 = ArrayList<Int>(5)
+    arrayList2.add(14)
+    arrayList2.add(20)
+    arrayList2.add(80)
+    println("......print ArrayList2......")
+    for (i in arrayList2) {
+        println(i)
     }
-
-    println("Printing index wise")
-
-    for (i in 0..3)
-        println("array index $i and value "+arrayString[i])
+    println("size of arrayList2 = "+arrayList2.size)
 
 }
