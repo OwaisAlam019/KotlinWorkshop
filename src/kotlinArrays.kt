@@ -33,4 +33,22 @@ fun main(args:Array<String>){
     }
     println("size of arrayList2 = "+arrayList2.size)
 
+
+//    gettig and setting values in arrayList
+
+    println("value at 0"+ arrayList1.get(0))
+    println("value at 0"+ arrayList1.set(0,"Rayan"))
+    println("=============Updated Array===========")
+    for (i in arrayList1) {
+        println(i)
+    }
+
+    //search
+    if(arrayList1.contains("Rayan"))
+        println("Result found")
+    else
+        println("Not Found")
+    
+
+
 }
