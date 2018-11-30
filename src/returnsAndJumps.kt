@@ -14,9 +14,9 @@ fun main(args:Array<String>){
 }
 
 fun foo() {
-   listOf(1, 2, 3, 4, 5).forEach lit@ {
-        if (it == 3) return@lit // non-local return directly to the caller of foo()
+   listOf(1, 2, 3, 4, 5).forEach lit@{
+        if (it == 3) return@lit // local return to the caller of the lambda, i.e. the forEach loop
         print(it)
     }
-    println("this point is Unreachable")
+    println("done with explicit label")
 }
