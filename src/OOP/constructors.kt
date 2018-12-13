@@ -4,24 +4,29 @@ package OOP
     Secondary  constructors
 * */
 
-class clothes (val brand:String,val type:String,val size:String) {
-    /*
-    * The primary constructor cannot contain any code.
-    * Initialization code can be placed in initializer blocks, which are prefixed with the init keyword.*/
-    var discount:Int = 0
-
-    init {
-        println("Cloth object created for brand ${brand}")
-        if (size=="small"){
-            discount = 20
-            println("You get $discount % discount")
-        }
-
+class clothes {
+    var clotheBrand:String = ""
+    var clotheType:String = ""
+    var clotheSize:String = ""
+    var clotheWaist:Int? = null
+    constructor(brand: String,type: String,size: String,waist:Int){
+        clotheBrand = brand
+        clotheType = type
+        clotheSize = size
+        clotheWaist = waist
+        println("initializing with waist")
     }
-        fun showDetails(){
-            println("Brand $brand")
-            println("Type $type")
-            println("size $size")
+
+    constructor(brand: String,type: String,size: String){
+        clotheBrand = brand
+        clotheType = type
+        clotheSize = size
+        println("initializing shirts")
+    }
+        fun showDetails(item:clothes){
+            println("Brand ${item.clotheBrand}")
+            println("Type ${item.clotheType}")
+            println("size ${item.clotheSize}")
         }
 }
 
@@ -29,6 +34,9 @@ class clothes (val brand:String,val type:String,val size:String) {
 fun main(args: Array<String>) {
 
     var shopItem = clothes("levis","jacket","small")
-    shopItem.showDetails()
+
+    var shopItem2 = clothes("levis","jacket","small",waist = 22)
+
+    shopItem.showDetails(shopItem)
 
 }
