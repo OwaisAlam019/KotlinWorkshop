@@ -2,7 +2,7 @@ package OOP
 
 import kotlin.math.roundToInt
 
-open class bankAccount(val accountNumber:Int,val accountName:String ){
+abstract class bankAccount(val accountNumber:Int,val accountName:String ){
     open var balance:Double = 0.0
 
     fun deposit(amount:Double):Boolean{
@@ -23,12 +23,14 @@ open class bankAccount(val accountNumber:Int,val accountName:String ){
         else
             return false
     }
+    abstract fun depositInterest()
+
 
 }
 
 open class savingAccount(accountNumber: Int,accountName: String,val interesstRate:Float):
         bankAccount(accountNumber,accountName){
-    open fun depositInterest(){
+    override fun depositInterest(){
         val interest = this.balance * interesstRate / 100
         deposit(interest)
     }
